@@ -41,6 +41,23 @@
             position: relative; /* For potential absolute positioned images */
             overflow: hidden; /* Ensures any background images don't overflow */
         }
+        /* Image overlay in header */
+        .header-bg::before {
+            content: '';
+            background-image: url('https://placehold.co/100x100/FFFFFF/A29BFE?text=PF'); /* Placeholder for EPFO icon */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 80px; /* Size of the icon */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg); /* Slightly rotated and centered */
+            width: 150%; /* Make it larger to fill more of the background */
+            height: 150%;
+            opacity: 0.1; /* Very subtle background image */
+            pointer-events: none; /* Allows clicks to pass through */
+        }
+
         /* Highlight text styling */
         .highlight-text {
             color: #a78bfa; /* A vibrant light purple for highlights */
@@ -82,13 +99,15 @@
             .section-icon {
                 font-size: 2.5rem;
             }
+            .header-bg::before {
+                background-size: 60px; /* Adjust size for smaller screens */
+            }
         }
     </style>
 </head>
 <body class="antialiased">
     <div class="header-bg text-center">
-        <!-- Add EPFO relevant images or logos here if desired -->
-        <!-- Example: <img src="your-epfo-logo.png" alt="EPFO Logo" class="absolute top-4 left-4 h-16 w-16 opacity-70"> -->
+        <!-- The EPFO image is now a subtle background element via CSS ::before pseudo-element -->
         <h1 class="text-6xl font-extrabold mb-4 tracking-tight">PF Saathi</h1>
         <p class="text-2xl font-light opacity-90">Your Provident Fund, Simplified!</p>
     </div>
@@ -98,8 +117,8 @@
         <!-- Grid container for tiles -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-            <!-- Team Section (Moved to the top) -->
-            <div class="section-card">
+            <!-- Team Section (Moved to the top and spans full width) -->
+            <div class="section-card md:col-span-2">
                 <h2 class="text-4xl font-bold mb-8 flex items-center text-purple-400">
                     <span class="section-icon">👥</span> Team
                 </h2>
@@ -162,6 +181,19 @@
                     <li>Nov 2025 (MVP Launch - Web): Friends and Family launch, featuring PF Score checks, AI-powered scoring, and support for offline PF resolutions.</li>
                     <li>Feb 2026 (Public Launch): General availability of the platform, enabling PF withdrawals and KYC updates, alongside the rollout of our initial Agent Network MVP and operations setup.</li>
                     <li>June 2026 onwards: Focused efforts on scaling our online presence and expanding the Agent Network, supported by robust operations scaling.</li>
+                </ul>
+            </div>
+
+            <!-- Additional Business and Verticals Section -->
+            <div class="section-card">
+                <h2 class="text-4xl font-bold mb-8 flex items-center text-green-400">
+                    <span class="section-icon">💰</span> Additional Business and Verticals
+                </h2>
+                <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
+                    <li>Unclaimed Assets such as Shares, MFs, Insurance etc. <span class="highlight-text">Rs 9 Lac Cr market</span>.</li>
+                    <li>Provisional Lending.</li>
+                    <li>Wealth Management.</li>
+                    <li>Insurance.</li>
                 </ul>
             </div>
 
