@@ -86,25 +86,84 @@
             margin-bottom: 0.75rem; /* Space between list items */
         }
 
-        /* Responsive adjustments */
+        /* Responsive adjustments for screens up to 768px (tablets/smaller desktops) */
         @media (max-width: 768px) {
             .header-bg {
-                padding: 3rem 0;
+                padding: 2.5rem 0; /* Slightly less header padding */
             }
             .header-bg h1 {
-                font-size: 3.5rem;
+                font-size: 3rem; /* Smaller header title */
             }
             .header-bg p {
-                font-size: 1.25rem;
+                font-size: 1.125rem; /* Smaller header subtitle */
             }
             .section-card {
-                padding: 2rem;
+                padding: 1.75rem; /* Reduced card padding */
+            }
+            .section-card h2 {
+                font-size: 1.8rem; /* Adjust title size for smaller screens */
+                margin-bottom: 1.25rem;
+            }
+            .section-card p, .section-card ul li {
+                font-size: 1rem; /* Base font size for main content */
+                line-height: 1.4; /* Slightly tighter line height */
             }
             .section-icon {
-                font-size: 2.5rem;
+                font-size: 2.2rem; /* Smaller icon for better fit */
+                margin-right: 1rem;
+            }
+            ul.list-disc li {
+                margin-bottom: 0.5rem; /* Less space between list items */
             }
             .header-bg::before {
-                background-size: 100px; /* Adjust size for smaller screens */
+                background-size: 80px; /* Adjust image size for smaller screens */
+            }
+            .container {
+                padding-left: 1rem; /* Reduce horizontal padding for container */
+                padding-right: 1rem;
+            }
+            .gap-8 { /* Reduce gap between grid items */
+                gap: 1.5rem;
+            }
+            .mb-8 { /* Reduce bottom margin for rows */
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* Further adjustments for smaller mobile screens (e.g., max-width 480px) */
+        @media (max-width: 480px) {
+            .section-card {
+                padding: 1.25rem; /* Even more reduced padding for small phones */
+            }
+            .section-card h2 {
+                font-size: 1.5rem; /* Smaller title for very compact screens */
+                margin-bottom: 0.75rem;
+            }
+            .section-card p, .section-card ul li {
+                font-size: 0.95rem; /* Slightly smaller than base for tiny screens */
+                line-height: 1.35;
+            }
+            .section-icon {
+                font-size: 1.8rem; /* Smallest icon size for tiny phones */
+                margin-right: 0.75rem;
+            }
+            ul.list-disc li {
+                margin-bottom: 0.4rem; /* Further reduced space for list items */
+            }
+            .header-bg h1 {
+                font-size: 2.5rem; /* Smallest header title */
+            }
+            .header-bg p {
+                font-size: 1rem; /* Smallest header subtitle */
+            }
+            .header-bg::before {
+                background-size: 60px; /* Smallest image size for tiny screens */
+            }
+            .gap-8 { /* Even smaller gap between grid items */
+                gap: 1rem;
+            }
+            .mb-8 { /* Even smaller bottom margin for rows */
+                margin-bottom: 1rem;
             }
         }
     </style>
@@ -127,7 +186,7 @@
                 <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
                     <li>Sagar Maheshwari: Over <span class="highlight-text">2 decades of expertise in Finance Advisory & Practice</span>. Chartered Accountant & Company Secretary.</li>
                     <li>Sriram Raghuraman: Over <span class="highlight-text">2 decades of entrepreneurial and enterprise experience</span> in IT Product & Project Management.</li>
-                    <li>Vivek Ravi Kumar: Possesses <span class="highlight-text">2 decades of experience in Fintech Product Management</span>, Banking & Strategy.</li>
+                    <li>Vivek Ravi Kumar: <span class="highlight-text">Brings 2 decades of experience in Fintech Product Management</span>, Banking & Strategy.</li>
                 </ul>
             </div>
         </div>
