@@ -20,7 +20,7 @@
             border-radius: 1.5rem; /* More rounded corners */
             padding: 3rem; /* Generous padding */
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1); /* Deeper shadow for elegance */
-            margin-bottom: 2.5rem; /* More space between sections */
+            /* Removed margin-bottom here, replaced by grid gap */
             border: 1px solid rgba(45, 55, 72, 0.5); /* Subtle border */
             transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
         }
@@ -85,87 +85,92 @@
 
     <div class="container mx-auto px-6 py-10 max-w-5xl">
 
-        <!-- Problem Section -->
-        <div class="section-card">
-            <h2 class="text-4xl font-bold mb-8 flex items-center text-red-400">
-                <span class="section-icon">💡</span> Problem
-            </h2>
-            <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
-                <li>**Lack of Awareness:** Confusing PF rules and complex procedures.</li>
-                <li>**High Costs & Opacity:** Consultants often charge exorbitant <span class="highlight-text">5-10% commission fees</span>.</li>
-                <li>**Complex Process:** Government platforms like UMANG and EPFO sites are hard to navigate.</li>
-                <li>**Frequent Rejections:** Over <span class="highlight-text">30% of withdrawal requests fail</span> due to errors, severely impacting financial inclusion.</li>
-            </ul>
-        </div>
+        <!-- Grid container for tiles -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-        <!-- Solution Section -->
-        <div class="section-card">
-            <h2 class="text-4xl font-bold mb-8 flex items-center text-green-400">
-                <span class="section-icon">✅</span> Solution
-            </h2>
-            <p class="text-xl mb-6 leading-relaxed">PF Saathi offers a user-centric, multi-channel platform designed to simplify PF management:</p>
-            <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
-                <li>**Multi-Channel Access:** Seamless accessibility via <span class="highlight-text">web, mobile, and voice interfaces</span>, with support for various vernacular languages.</li>
-                <li>**AI Error Prevention:** Utilizes advanced AI for <span class="highlight-text">instant data validation</span>, drastically reducing rejection rates.</li>
-                <li>**Cost-Effective Pricing:** Features a demography-sensitive pricing model to ensure wider reach and affordability.</li>
-                <li>**Vision:** Our platform is <span class="highlight-text">AI-powered, self-service, vernacular-enabled</span>, and provides affordable access, aiming to be India's most accessible and trusted PF solution.</li>
-            </ul>
-        </div>
+            <!-- Problem Section -->
+            <div class="section-card">
+                <h2 class="text-4xl font-bold mb-8 flex items-center text-red-400">
+                    <span class="section-icon">💡</span> Problem
+                </h2>
+                <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
+                    <li>Lack of Awareness: Confusing PF rules and complex procedures.</li>
+                    <li>High Costs & Opacity: Consultants often charge exorbitant <span class="highlight-text">5-10% commission fees</span>.</li>
+                    <li>Complex Process: Government platforms like UMANG and EPFO sites are hard to navigate.</li>
+                    <li>Frequent Rejections: Over <span class="highlight-text">30% of withdrawal requests fail</span> due to errors, severely impacting financial inclusion.</li>
+                </ul>
+            </div>
 
-        <!-- Opportunity Section -->
-        <div class="section-card">
-            <h2 class="text-4xl font-bold mb-8 flex items-center text-yellow-400">
-                <span class="section-icon">📈</span> Opportunity
-            </h2>
-            <p class="text-xl mb-6 leading-relaxed">The Indian Provident Fund market presents a massive and largely untapped opportunity:</p>
-            <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
-                <li>**Total EPFO Members:** <span class="highlight-text">30 Crore</span></li>
-                <li>**Active Members:** <span class="highlight-text">8 Crore</span> (with an impressive 1.8 Crore new members added annually).</li>
-                <li>**Annual PF Withdrawal Value:** A substantial <span class="highlight-text">Rs 1.3 Lac Crore</span>.</li>
-                <li>**Addressable Market:** Estimated at a significant <span class="highlight-text">Rs 9,000 Crore</span>.</li>
-            </ul>
-        </div>
+            <!-- Solution Section -->
+            <div class="section-card">
+                <h2 class="text-4xl font-bold mb-8 flex items-center text-green-400">
+                    <span class="section-icon">✅</span> Solution
+                </h2>
+                <p class="text-xl mb-6 leading-relaxed">PF Saathi offers a user-centric, multi-channel platform designed to simplify PF management:</p>
+                <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
+                    <li>Multi-Channel Access: Seamless accessibility via <span class="highlight-text">web, mobile, and voice interfaces</span>, with support for various vernacular languages.</li>
+                    <li>AI Error Prevention: Utilizes advanced AI for <span class="highlight-text">instant data validation</span>, drastically reducing rejection rates.</li>
+                    <li>Cost-Effective Pricing: Features a demography-sensitive pricing model to ensure wider reach and affordability.</li>
+                    <li>Vision: Our platform is <span class="highlight-text">AI-powered, self-service, vernacular-enabled</span>, and provides affordable access, aiming to be India's most accessible and trusted PF solution.</li>
+                </ul>
+            </div>
 
-        <!-- Traction Section -->
-        <div class="section-card">
-            <h2 class="text-4xl font-bold mb-8 flex items-center text-blue-400">
-                <span class="section-icon">🚀</span> Traction (Roll Out & Scale)
-            </h2>
-            <p class="text-xl mb-6 leading-relaxed">We have a clear roadmap for growth and market penetration:</p>
-            <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
-                <li>**Nov 2025 (MVP Launch - Web):** Friends and Family launch, featuring PF Score checks, AI-powered scoring, and support for offline PF resolutions.</li>
-                <li>**Feb 2026 (Public Launch):** General availability of the platform, enabling PF withdrawals and KYC updates, alongside the rollout of our initial Agent Network MVP and operations setup.</li>
-                <li>**June 2026 onwards:** Focused efforts on scaling our online presence and expanding the Agent Network, supported by robust operations scaling.</li>
-            </ul>
-        </div>
+            <!-- Opportunity Section -->
+            <div class="section-card">
+                <h2 class="text-4xl font-bold mb-8 flex items-center text-yellow-400">
+                    <span class="section-icon">📈</span> Opportunity
+                </h2>
+                <p class="text-xl mb-6 leading-relaxed">The Indian Provident Fund market presents a massive and largely untapped opportunity:</p>
+                <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
+                    <li>Total EPFO Members: <span class="highlight-text">30 Crore</span></li>
+                    <li>Active Members: <span class="highlight-text">8 Crore</span> (with an impressive 1.8 Crore new members added annually).</li>
+                    <li>Annual PF Withdrawal Value: A substantial <span class="highlight-text">Rs 1.3 Lac Crore</span>.</li>
+                    <li>Addressable Market: Estimated at a significant <span class="highlight-text">Rs 9,000 Crore</span>.</li>
+                </ul>
+            </div>
 
-        <!-- Team Section -->
-        <div class="section-card">
-            <h2 class="text-4xl font-bold mb-8 flex items-center text-purple-400">
-                <span class="section-icon">👥</span> Team
-            </h2>
-            <p class="text-xl mb-6 leading-relaxed">Our strong founding team brings together decades of diverse and relevant experience:</p>
-            <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
-                <li>**Sagar Maheshwari:** Over <span class="highlight-text">2 decades of expertise in Finance Advisory & Practice</span>.</li>
-                <li>**Sriram Raghuraman:** A Chartered Accountant & Company Secretary with <span class="highlight-text">2 decades of entrepreneurial and enterprise experience</span> in IT Product & Project Management.</li>
-                <li>**Vivek Ravi Kumar:** Possesses <span class="highlight-text">2 decades of experience in Fintech Product Management</span>, Banking & Strategy.</li>
-            </ul>
-        </div>
+            <!-- Traction Section -->
+            <div class="section-card">
+                <h2 class="text-4xl font-bold mb-8 flex items-center text-blue-400">
+                    <span class="section-icon">🚀</span> Traction (Roll Out & Scale)
+                </h2>
+                <p class="text-xl mb-6 leading-relaxed">We have a clear roadmap for growth and market penetration:</p>
+                <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
+                    <li>Nov 2025 (MVP Launch - Web): Friends and Family launch, featuring PF Score checks, AI-powered scoring, and support for offline PF resolutions.</li>
+                    <li>Feb 2026 (Public Launch): General availability of the platform, enabling PF withdrawals and KYC updates, alongside the rollout of our initial Agent Network MVP and operations setup.</li>
+                    <li>June 2026 onwards: Focused efforts on scaling our online presence and expanding the Agent Network, supported by robust operations scaling.</li>
+                </ul>
+            </div>
 
-        <!-- The Ask Section -->
-        <div class="section-card">
-            <h2 class="text-4xl font-bold mb-8 flex items-center text-indigo-400">
-                <span class="section-icon">💰</span> The Ask
-            </h2>
-            <p class="text-xl mb-6 leading-relaxed">
-                We are seeking <span class="highlight-text font-extrabold">Rs 7.2 Crore</span> in exchange for <span class="highlight-text font-extrabold">15% Equity Stake</span>. This crucial investment will cover:
-            </p>
-            <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
-                <li>**Product Development (12.8%):** Essential for MVP launch (Nov 2025) and Public Launch (Feb 2026), including hiring top UX, AI, and other product development talent.</li>
-                <li>**Marketing (43.4%):** To create and launch a comprehensive mass adoption strategy targeting the Feb 2026 public release (Digital, Print, Affiliate channels).</li>
-                <li>**Operations (43.8%):** Covering team salaries for Year 1, hiring critical operations staff to establish our Operations Desk, and securing necessary rent and infrastructure.</li>
-            </ul>
-        </div>
+            <!-- Team Section -->
+            <div class="section-card">
+                <h2 class="text-4xl font-bold mb-8 flex items-center text-purple-400">
+                    <span class="section-icon">👥</span> Team
+                </h2>
+                <p class="text-xl mb-6 leading-relaxed">Our strong founding team brings together decades of diverse and relevant experience:</p>
+                <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
+                    <li>Sagar Maheshwari: Over <span class="highlight-text">2 decades of expertise in Finance Advisory & Practice</span>.</li>
+                    <li>Sriram Raghuraman: A Chartered Accountant & Company Secretary with <span class="highlight-text">2 decades of entrepreneurial and enterprise experience</span> in IT Product & Project Management.</li>
+                    <li>Vivek Ravi Kumar: Possesses <span class="highlight-text">2 decades of experience in Fintech Product Management</span>, Banking & Strategy.</li>
+                </ul>
+            </div>
+
+            <!-- The Ask Section -->
+            <div class="section-card">
+                <h2 class="text-4xl font-bold mb-8 flex items-center text-indigo-400">
+                    <span class="section-icon">💰</span> The Ask
+                </h2>
+                <p class="text-xl mb-6 leading-relaxed">
+                    We are seeking <span class="highlight-text font-extrabold">Rs 7.2 Crore</span> in exchange for <span class="highlight-text font-extrabold">15% Equity Stake</span>. This crucial investment will cover:
+                </p>
+                <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
+                    <li>Product Development (12.8%): Essential for MVP launch (Nov 2025) and Public Launch (Feb 2026), including hiring top UX, AI, and other product development talent.</li>
+                    <li>Marketing (43.4%): To create and launch a comprehensive mass adoption strategy targeting the Feb 2026 public release (Digital, Print, Affiliate channels).</li>
+                    <li>Operations (43.8%): Covering team salaries for Year 1, hiring critical operations staff to establish our Operations Desk, and securing necessary rent and infrastructure.</li>
+                </ul>
+            </div>
+
+        </div> <!-- End of grid container -->
 
     </div>
 </body>
