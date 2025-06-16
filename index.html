@@ -20,9 +20,10 @@
             border-radius: 1.5rem; /* More rounded corners */
             padding: 3rem; /* Generous padding */
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1); /* Deeper shadow for elegance */
-            /* Removed margin-bottom here, replaced by grid gap */
             border: 1px solid rgba(45, 55, 72, 0.5); /* Subtle border */
             transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+            display: flex; /* Ensure flexbox for content alignment */
+            flex-direction: column; /* Stack content vertically */
         }
         .section-card:hover {
             transform: translateY(-5px); /* Slight lift on hover */
@@ -30,13 +31,15 @@
         }
         /* Header styling with vibrant gradient */
         .header-bg {
-            background: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%); /* Purple to Pink vibrant gradient */
+            background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); /* Softer Purple to Lavender gradient */
             color: #ffffff;
             padding: 4rem 0; /* More vertical padding */
             border-bottom-left-radius: 2rem;
             border-bottom-right-radius: 2rem;
             margin-bottom: 3rem;
             box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.3); /* Shadow for header */
+            position: relative; /* For potential absolute positioned images */
+            overflow: hidden; /* Ensures any background images don't overflow */
         }
         /* Highlight text styling */
         .highlight-text {
@@ -57,6 +60,11 @@
         ul.list-disc li {
             margin-bottom: 0.75rem; /* Space between list items */
         }
+        /* Ensure consistent height for cards in a row if content varies */
+        .grid .section-card {
+            height: auto; /* Allow natural height based on content */
+        }
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .header-bg {
@@ -79,6 +87,8 @@
 </head>
 <body class="antialiased">
     <div class="header-bg text-center">
+        <!-- Add EPFO relevant images or logos here if desired -->
+        <!-- Example: <img src="your-epfo-logo.png" alt="EPFO Logo" class="absolute top-4 left-4 h-16 w-16 opacity-70"> -->
         <h1 class="text-6xl font-extrabold mb-4 tracking-tight">PF Saathi</h1>
         <p class="text-2xl font-light opacity-90">Your Provident Fund, Simplified!</p>
     </div>
@@ -87,6 +97,19 @@
 
         <!-- Grid container for tiles -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Team Section (Moved to the top) -->
+            <div class="section-card">
+                <h2 class="text-4xl font-bold mb-8 flex items-center text-purple-400">
+                    <span class="section-icon">👥</span> Team
+                </h2>
+                <p class="text-xl mb-6 leading-relaxed">Our strong founding team brings together decades of diverse and relevant experience:</p>
+                <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
+                    <li>Sagar Maheshwari: Over <span class="highlight-text">2 decades of expertise in Finance Advisory & Practice</span>. Chartered Accountant & Company Secretary.</li>
+                    <li>Sriram Raghuraman: Over <span class="highlight-text">2 decades of entrepreneurial and enterprise experience</span> in IT Product & Project Management.</li>
+                    <li>Vivek Ravi Kumar: Possesses <span class="highlight-text">2 decades of experience in Fintech Product Management</span>, Banking & Strategy.</li>
+                </ul>
+            </div>
 
             <!-- Problem Section -->
             <div class="section-card">
@@ -139,34 +162,6 @@
                     <li>Nov 2025 (MVP Launch - Web): Friends and Family launch, featuring PF Score checks, AI-powered scoring, and support for offline PF resolutions.</li>
                     <li>Feb 2026 (Public Launch): General availability of the platform, enabling PF withdrawals and KYC updates, alongside the rollout of our initial Agent Network MVP and operations setup.</li>
                     <li>June 2026 onwards: Focused efforts on scaling our online presence and expanding the Agent Network, supported by robust operations scaling.</li>
-                </ul>
-            </div>
-
-            <!-- Team Section -->
-            <div class="section-card">
-                <h2 class="text-4xl font-bold mb-8 flex items-center text-purple-400">
-                    <span class="section-icon">👥</span> Team
-                </h2>
-                <p class="text-xl mb-6 leading-relaxed">Our strong founding team brings together decades of diverse and relevant experience:</p>
-                <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
-                    <li>Sagar Maheshwari: Over <span class="highlight-text">2 decades of expertise in Finance Advisory & Practice</span>.</li>
-                    <li>Sriram Raghuraman: A Chartered Accountant & Company Secretary with <span class="highlight-text">2 decades of entrepreneurial and enterprise experience</span> in IT Product & Project Management.</li>
-                    <li>Vivek Ravi Kumar: Possesses <span class="highlight-text">2 decades of experience in Fintech Product Management</span>, Banking & Strategy.</li>
-                </ul>
-            </div>
-
-            <!-- The Ask Section -->
-            <div class="section-card">
-                <h2 class="text-4xl font-bold mb-8 flex items-center text-indigo-400">
-                    <span class="section-icon">💰</span> The Ask
-                </h2>
-                <p class="text-xl mb-6 leading-relaxed">
-                    We are seeking <span class="highlight-text font-extrabold">Rs 7.2 Crore</span> in exchange for <span class="highlight-text font-extrabold">15% Equity Stake</span>. This crucial investment will cover:
-                </p>
-                <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
-                    <li>Product Development (12.8%): Essential for MVP launch (Nov 2025) and Public Launch (Feb 2026), including hiring top UX, AI, and other product development talent.</li>
-                    <li>Marketing (43.4%): To create and launch a comprehensive mass adoption strategy targeting the Feb 2026 public release (Digital, Print, Affiliate channels).</li>
-                    <li>Operations (43.8%): Covering team salaries for Year 1, hiring critical operations staff to establish our Operations Desk, and securing necessary rent and infrastructure.</li>
                 </ul>
             </div>
 
