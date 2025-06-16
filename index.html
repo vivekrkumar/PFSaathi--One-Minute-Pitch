@@ -11,24 +11,32 @@
         /* Base styles */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d1117; /* Dark charcoal/near black background */
-            color: #e2e8f0; /* Light gray text for contrast */
+            background-color: #F8FAFC; /* Light blue-white background */
+            color: #1E293B; /* Dark slate text for contrast */
         }
-        /* Card styling for sections */
+        /* Card styling for sections - common styles */
         .section-card {
-            background-color: #1a202c; /* Slightly lighter dark background for cards */
             border-radius: 1.5rem; /* More rounded corners */
             padding: 3rem; /* Generous padding */
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1); /* Deeper shadow for elegance */
-            border: 1px solid rgba(45, 55, 72, 0.5); /* Subtle border */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Lighter shadow for elegance */
+            border: 1px solid rgba(226, 232, 240, 0.8); /* Subtle light border */
             transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
             display: flex; /* Ensure flexbox for content alignment */
             flex-direction: column; /* Stack content vertically */
         }
         .section-card:hover {
             transform: translateY(-5px); /* Slight lift on hover */
-            box-shadow: 0 25px 35px -8px rgba(0, 0, 0, 0.3), 0 15px 15px -8px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+            box-shadow: 0 25px 35px -8px rgba(0, 0, 0, 0.15), 0 15px 15px -8px rgba(0, 0, 0, 0.08); /* More pronounced shadow on hover */
         }
+
+        /* Specific card colors */
+        .card-color-1 { background-color: #f7f9fd; } /* Very light off-white */
+        .card-color-2 { background-color: #f0f4fa; } /* Light blue-grey */
+        .card-color-3 { background-color: #fdf5f5; } /* Very light rose */
+        .card-color-4 { background-color: #f5fdf5; } /* Very light green */
+        .card-color-5 { background-color: #f9f5fd; } /* Very light lavender */
+        .card-color-6 { background-color: #fdfaf5; } /* Very light peach */
+
         /* Header styling with vibrant gradient */
         .header-bg {
             background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%); /* Softer Purple to Lavender gradient */
@@ -37,37 +45,37 @@
             border-bottom-left-radius: 2rem;
             border-bottom-right-radius: 2rem;
             margin-bottom: 3rem;
-            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.3); /* Shadow for header */
-            position: relative; /* For potential absolute positioned images */
-            overflow: hidden; /* Ensures any background images don't overflow */
+            box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2); /* Shadow for header */
+            position: relative; /* For image positioning */
+            overflow: hidden; /* Ensures background image doesn't overflow */
         }
-        /* Image overlay in header */
+        /* EPFO image overlay in header */
         .header-bg::before {
             content: '';
-            background-image: url('https://placehold.co/100x100/FFFFFF/A29BFE?text=PF'); /* Placeholder for EPFO icon */
+            background-image: url('https://placehold.co/200x200/FFFFFF/A29BFE?text=EPFO'); /* Placeholder. Replace with actual EPFO logo. */
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 80px; /* Size of the icon */
+            background-size: 200px; /* Size of the icon */
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%) rotate(-15deg); /* Slightly rotated and centered */
-            width: 150%; /* Make it larger to fill more of the background */
-            height: 150%;
-            opacity: 0.1; /* Very subtle background image */
+            width: 120%; /* Make it larger to fill more of the background subtly */
+            height: 120%;
+            opacity: 0.08; /* Very subtle background image */
             pointer-events: none; /* Allows clicks to pass through */
         }
 
         /* Highlight text styling */
         .highlight-text {
-            color: #a78bfa; /* A vibrant light purple for highlights */
+            color: #6C5CE7; /* A strong purple for highlights */
             font-weight: 700; /* Bolder highlight */
         }
         /* Icon styling */
         .section-icon {
             font-size: 3.5rem; /* Larger icons */
             margin-right: 1.5rem;
-            filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.7)); /* Glow effect for icons */
+            filter: drop-shadow(0 0 8px rgba(108, 92, 231, 0.5)); /* Glow effect for icons, adjusted for lighter background */
             transition: transform 0.2s ease;
         }
         .section-card:hover .section-icon {
@@ -76,10 +84,6 @@
         /* List item styling */
         ul.list-disc li {
             margin-bottom: 0.75rem; /* Space between list items */
-        }
-        /* Ensure consistent height for cards in a row if content varies */
-        .grid .section-card {
-            height: auto; /* Allow natural height based on content */
         }
 
         /* Responsive adjustments */
@@ -100,26 +104,23 @@
                 font-size: 2.5rem;
             }
             .header-bg::before {
-                background-size: 60px; /* Adjust size for smaller screens */
+                background-size: 100px; /* Adjust size for smaller screens */
             }
         }
     </style>
 </head>
 <body class="antialiased">
     <div class="header-bg text-center">
-        <!-- The EPFO image is now a subtle background element via CSS ::before pseudo-element -->
         <h1 class="text-6xl font-extrabold mb-4 tracking-tight">PF Saathi</h1>
         <p class="text-2xl font-light opacity-90">Your Provident Fund, Simplified!</p>
     </div>
 
     <div class="container mx-auto px-6 py-10 max-w-5xl">
 
-        <!-- Grid container for tiles -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-            <!-- Team Section (Moved to the top and spans full width) -->
-            <div class="section-card md:col-span-2">
-                <h2 class="text-4xl font-bold mb-8 flex items-center text-purple-400">
+        <!-- Row 1: Team Section (Centered and single column) -->
+        <div class="flex justify-center mb-8">
+            <div class="section-card w-full max-w-2xl card-color-1">
+                <h2 class="text-4xl font-bold mb-8 flex items-center text-purple-600">
                     <span class="section-icon">👥</span> Team
                 </h2>
                 <p class="text-xl mb-6 leading-relaxed">Our strong founding team brings together decades of diverse and relevant experience:</p>
@@ -129,10 +130,13 @@
                     <li>Vivek Ravi Kumar: Possesses <span class="highlight-text">2 decades of experience in Fintech Product Management</span>, Banking & Strategy.</li>
                 </ul>
             </div>
+        </div>
 
+        <!-- Row 2: Problem and Solution Cards (Side-by-side) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <!-- Problem Section -->
-            <div class="section-card">
-                <h2 class="text-4xl font-bold mb-8 flex items-center text-red-400">
+            <div class="section-card card-color-2">
+                <h2 class="text-4xl font-bold mb-8 flex items-center text-red-500">
                     <span class="section-icon">💡</span> Problem
                 </h2>
                 <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
@@ -144,8 +148,8 @@
             </div>
 
             <!-- Solution Section -->
-            <div class="section-card">
-                <h2 class="text-4xl font-bold mb-8 flex items-center text-green-400">
+            <div class="section-card card-color-3">
+                <h2 class="text-4xl font-bold mb-8 flex items-center text-green-500">
                     <span class="section-icon">✅</span> Solution
                 </h2>
                 <p class="text-xl mb-6 leading-relaxed">PF Saathi offers a user-centric, multi-channel platform designed to simplify PF management:</p>
@@ -156,10 +160,13 @@
                     <li>Vision: Our platform is <span class="highlight-text">AI-powered, self-service, vernacular-enabled</span>, and provides affordable access, aiming to be India's most accessible and trusted PF solution.</li>
                 </ul>
             </div>
+        </div>
 
+        <!-- Row 3: Opportunity and Traction Cards (Side-by-side) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
             <!-- Opportunity Section -->
-            <div class="section-card">
-                <h2 class="text-4xl font-bold mb-8 flex items-center text-yellow-400">
+            <div class="section-card card-color-4">
+                <h2 class="text-4xl font-bold mb-8 flex items-center text-yellow-500">
                     <span class="section-icon">📈</span> Opportunity
                 </h2>
                 <p class="text-xl mb-6 leading-relaxed">The Indian Provident Fund market presents a massive and largely untapped opportunity:</p>
@@ -172,8 +179,8 @@
             </div>
 
             <!-- Traction Section -->
-            <div class="section-card">
-                <h2 class="text-4xl font-bold mb-8 flex items-center text-blue-400">
+            <div class="section-card card-color-5">
+                <h2 class="text-4xl font-bold mb-8 flex items-center text-blue-500">
                     <span class="section-icon">🚀</span> Traction (Roll Out & Scale)
                 </h2>
                 <p class="text-xl mb-6 leading-relaxed">We have a clear roadmap for growth and market penetration:</p>
@@ -183,10 +190,12 @@
                     <li>June 2026 onwards: Focused efforts on scaling our online presence and expanding the Agent Network, supported by robust operations scaling.</li>
                 </ul>
             </div>
+        </div>
 
-            <!-- Additional Business and Verticals Section -->
-            <div class="section-card">
-                <h2 class="text-4xl font-bold mb-8 flex items-center text-green-400">
+        <!-- Row 4: Additional Business and Verticals Section (Centered and single column) -->
+        <div class="flex justify-center mb-8">
+            <div class="section-card w-full max-w-2xl card-color-6">
+                <h2 class="text-4xl font-bold mb-8 flex items-center text-green-500">
                     <span class="section-icon">💰</span> Additional Business and Verticals
                 </h2>
                 <ul class="list-disc pl-8 space-y-4 text-xl leading-relaxed">
@@ -196,8 +205,7 @@
                     <li>Insurance.</li>
                 </ul>
             </div>
-
-        </div> <!-- End of grid container -->
+        </div>
 
     </div>
 </body>
